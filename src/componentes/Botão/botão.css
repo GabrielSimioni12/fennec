@@ -1,0 +1,18 @@
+.botão {
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 32px 0px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.botão:hover {
+    background-color: #0b78e3;
+
+}
