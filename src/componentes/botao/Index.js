@@ -1,8 +1,8 @@
-import './botão.css';
+import './botao.css';
 
 const botão = (props) => {
     return (
-        <button className="botão">
+        <button className="botao">
             {props.children}
         </button>
     )

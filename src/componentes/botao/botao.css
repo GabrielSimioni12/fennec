@@ -1,6 +1,7 @@
-.botão {
+.botao {
     background-color: #1E90FF;
     border: none;
+    border-radius: 10px;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -12,7 +13,7 @@
     border-radius: 4px;
 }
 
-.botão:hover {
+.botao:hover {
     background-color: #0b78e3;
 
 }
