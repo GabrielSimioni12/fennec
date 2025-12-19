@@ -8,38 +8,38 @@ function App() {
    const times = [
     {
       nome: 'TI',
-      corPrimaria: '#454545',
-      corSecundaria: '#547792'
+      corPrimaria: '#383838ff',
+      corSecundaria: '#F3F2EC'
     }, 
 
       {
       nome: 'Marketing',
       corPrimaria: '#3D1860',
-      corSecundaria: '#643579'
+      corSecundaria: '#F3F2EC'
     }, 
 
       {
       nome: 'Vendas',
-      corPrimaria: '#443627',
-      corSecundaria: '#D98324'
+      corPrimaria: '#008cffff',
+      corSecundaria: '#F3F2EC'
     }, 
 
       {
       nome: 'RH',
-      corPrimaria: '#FF5555',
-      corSecundaria: '#FF937E'
+      corPrimaria: '#c41616ff',
+      corSecundaria: '#F3F2EC'
     }, 
 
       {
       nome: 'Financeiro',
       corPrimaria: '#5B913B',
-      corSecundaria: '#77B254'
+      corSecundaria: '#F3F2EC'
     }, 
 
       {
       nome: 'Operações',
       corPrimaria: '#3C467B',
-      corSecundaria: '#50589C'
+      corSecundaria: '#F3F2EC'
     }, 
 
       {
