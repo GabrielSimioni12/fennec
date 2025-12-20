@@ -7,7 +7,7 @@ import './Formlario.css';
 
 const Formulario = (props) => {
 
-    const times = ['TI', 'Marketing', 'Vendas', 'RH', 'Financeiro', 'Operações', 'Jurídico'];
+   
 
     
     const [nome, setNome] = useState('');
@@ -43,7 +43,7 @@ const Formulario = (props) => {
                 <CampoTexto obrigatorio={true} label="Imagem" placeholder="Digite o seu endereço da Imagem" valor = {imagem} aoAlterado={valor => setImagem(valor)} /> 
 
 
-                <ListaSuspensa obrigatorio={true} label="Time" itens={times} valor={time} aoAlterado={valor => setTime(valor)} />
+                <ListaSuspensa obrigatorio={true} label="Time" itens={props.times} valor={time} aoAlterado={valor => setTime(valor)} />
 
 
                 <Botao>Criar Card</Botao>

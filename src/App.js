@@ -61,7 +61,7 @@ function App() {
     
 
       <Banner />
-      <Formulario aoColaboradorCadastrado={aoNovoColaboradorAdicionado} />
+      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={aoNovoColaboradorAdicionado} />
 
       {times.map(time => <Time 
         key={time.nome} 
