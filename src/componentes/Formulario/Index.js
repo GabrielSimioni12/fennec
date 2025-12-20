@@ -40,7 +40,7 @@ const Formulario = (props) => {
                 <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite o seu Cargo"  valor = {cargo} aoAlterado={valor => setCargo(valor)} />
 
 
-                <CampoTexto obrigatorio={true} label="Imagem" placeholder="Digite o seu endereço da Imagem" valor = {imagem} aoAlterado={valor => setImagem(valor)} /> 
+                <CampoTexto label="Imagem" placeholder="Digite o seu endereço da Imagem" valor = {imagem} aoAlterado={valor => setImagem(valor)} /> 
 
 
                 <ListaSuspensa obrigatorio={true} label="Time" itens={props.times} valor={time} aoAlterado={valor => setTime(valor)} />

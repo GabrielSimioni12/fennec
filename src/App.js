@@ -9,24 +9,24 @@ function App() {
     {
       nome: 'TI',
       corPrimaria: '#383838ff',
-      corSecundaria: '#F3F2EC'
+      corSecundaria: '#D9F7E9'
     }, 
 
       {
       nome: 'Marketing',
-      corPrimaria: '#3D1860',
+      corPrimaria: '#E06B69',
       corSecundaria: '#F3F2EC'
     }, 
 
       {
       nome: 'Vendas',
       corPrimaria: '#008cffff',
-      corSecundaria: '#F3F2EC'
+      corSecundaria: '#E8F8FF'
     }, 
 
       {
       nome: 'RH',
-      corPrimaria: '#c41616ff',
+      corPrimaria: '#FFBA05',
       corSecundaria: '#F3F2EC'
     }, 
 
@@ -39,13 +39,13 @@ function App() {
       {
       nome: 'Operações',
       corPrimaria: '#3C467B',
-      corSecundaria: '#F3F2EC'
+      corSecundaria: '#F0F8E2'
     }, 
 
       {
       nome: 'Jurídico',
       corPrimaria: '#E62727',
-      corSecundaria: '#F3F2EC'
+      corSecundaria: '#F0F8E2'
     }, 
 
    ]
