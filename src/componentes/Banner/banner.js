@@ -1,22 +1,24 @@
 import "./banner.css";
+import ChartLine from "./ChartLine";
 
-function Banner() {
+const Banner = () => {
   return (
-    <header className="hero">
-      <div className="hero-overlay"></div>
+    <header
+      className="banner"
+      style={{ backgroundImage: "url(/images/banner.jpeg)" }}
+    >
+      <div className="overlay" />
 
-      <div className="hero-content">
-        <h1>FENNEC</h1>
-        <p>Consultoria Empresarial</p>
-
-        <div className="hero-metrics">
-          <span>36+ Clientes</span>
-          <span>10+ Anos</span>
-          <span>95% Satisfação</span>
+      <div className="banner-content">
+        <div className="text">
+          <h1>FENNEC</h1>
+          <span>Consultoria Empresarial</span>
         </div>
+
+        <ChartLine />
       </div>
     </header>
   );
-}
+};
 
 export default Banner;

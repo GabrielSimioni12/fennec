@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Banner from './componentes/Banner/banner';
+import Banner from './componentes/Banner/Banner';
 import Formulario from './componentes/Formulario/Index';
 import Time from './componentes/Time/Time';
 
@@ -9,31 +9,31 @@ function App() {
     {
       nome: 'TI',
       corPrimaria: '#383838ff',
-      corSecundaria: '#D9F7E9'
+      corSecundaria: '#F0F8E2'
     }, 
 
       {
       nome: 'Marketing',
       corPrimaria: '#E06B69',
-      corSecundaria: '#F3F2EC'
+      corSecundaria: '#F0F8E2'
     }, 
 
       {
       nome: 'Vendas',
       corPrimaria: '#008cffff',
-      corSecundaria: '#E8F8FF'
+      corSecundaria: '#F0F8E2'
     }, 
 
       {
       nome: 'RH',
       corPrimaria: '#FFBA05',
-      corSecundaria: '#F3F2EC'
+      corSecundaria: '#F0F8E2'
     }, 
 
       {
       nome: 'Financeiro',
       corPrimaria: '#5B913B',
-      corSecundaria: '#F3F2EC'
+      corSecundaria: '#F0F8E2'
     }, 
 
       {
@@ -52,7 +52,6 @@ function App() {
    
   const [colaboradores, setColaboradores] = useState([]);
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador);
     setColaboradores([...colaboradores, colaborador]);
   }
 

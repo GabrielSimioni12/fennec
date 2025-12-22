@@ -1,70 +1,79 @@
-/* remove espaços padrão */
-body {
-  margin: 0;
-}
-
-/* HERO */
-.hero {
+.banner {
   position: relative;
-  width: 100vw;
-  height: 520px;
-  background: url("/images/Fennec_banner.jpeg") center / cover no-repeat;
-  display: flex;
-  align-items: center;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
   overflow: hidden;
 }
 
-/* escurece o fundo para leitura */
-.hero-overlay {
+.overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to right,
-    rgba(5, 25, 45, 0.85),
-    rgba(5, 25, 45, 0.4)
+    180deg,
+    rgba(10, 25, 47, 0.8),
+    rgba(10, 25, 47, 0.6)
   );
 }
 
-/* conteúdo */
-.hero-content {
+/* Conteúdo */
+.banner-content {
   position: relative;
-  z-index: 2;
-  color: #fff;
-  max-width: 1200px;
-  padding: 0 6%;
-}
-
-.hero-content h1 {
-  font-size: 4rem;
-  letter-spacing: 4px;
-  margin-bottom: 12px;
-}
-
-.hero-content p {
-  font-size: 1.4rem;
-  opacity: 0.9;
-  margin-bottom: 28px;
-}
-
-.hero-metrics {
+  height: 100%;
+  padding: 40px 80px;
   display: flex;
-  gap: 32px;
-  font-size: 1rem;
-  opacity: 0.9;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .hero {
-    height: 420px;
-  }
+/* Texto */
+.text h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: 3px;
+}
 
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
+.text span {
+  font-size: 14px;
+  opacity: 0.85;
+}
 
-  .hero-metrics {
-    flex-direction: column;
-    gap: 12px;
+/* Linha animada */
+.chart-line {
+  width: 100%;
+  height: 120px;
+}
+
+.line {
+  fill: none;
+  stroke: #4fc3f7;
+  stroke-width: 3;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 4s ease-in-out infinite alternate;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
   }
+}
+
+/* Pontos */
+.point {
+  fill: #4fc3f7;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.delay1 { animation-delay: 0.4s; }
+.delay2 { animation-delay: 0.8s; }
+.delay3 { animation-delay: 1.2s; }
+.delay4 { animation-delay: 1.6s; }
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
 }
