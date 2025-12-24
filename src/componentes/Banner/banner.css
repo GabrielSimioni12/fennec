@@ -1,79 +1,29 @@
-.banner {
+.banner-container {
   position: relative;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
+  width: 100%;
+  height: 380px;
   overflow: hidden;
+  background-color: #000;
 }
 
-.overlay {
+/* Imagem cobre tudo, mas NÃO corta o topo */
+.banner-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 25, 47, 0.8),
-    rgba(10, 25, 47, 0.6)
-  );
-}
-
-/* Conteúdo */
-.banner-content {
-  position: relative;
-  height: 100%;
-  padding: 40px 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Texto */
-.text h1 {
-  font-size: 40px;
-  margin: 0;
-  letter-spacing: 3px;
-}
-
-.text span {
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-/* Linha animada */
-.chart-line {
   width: 100%;
-  height: 120px;
+  height: 100%;
+  object-fit: cover;
+
+  /* 👇 AQUI ESTÁ O SEGREDO */
+  object-position: center top;
 }
 
-.line {
-  fill: none;
-  stroke: #4fc3f7;
-  stroke-width: 3;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: drawLine 4s ease-in-out infinite alternate;
-}
-
-@keyframes drawLine {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* Pontos */
-.point {
-  fill: #4fc3f7;
-  animation: pulse 2s infinite ease-in-out;
-}
-
-.delay1 { animation-delay: 0.4s; }
-.delay2 { animation-delay: 0.8s; }
-.delay3 { animation-delay: 1.2s; }
-.delay4 { animation-delay: 1.6s; }
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.4); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.6; }
+/* SVG acompanha exatamente o mesmo enquadramento */
+.neon-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
 }
