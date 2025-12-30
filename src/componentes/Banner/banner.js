@@ -1,10 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import './banner.css';
+import React from "react";
+import { motion } from "framer-motion";
+import "./banner.css";
 
 const Banner = () => {
   const linhaCaminho =
-    "M22.0005 350L128 316L190 338L242 316L330 254L494 290L744 198L828 146L916 208L1004 186L1078 166H1118L1192 146L1310 18";
+    "M22 350 L128 316 L190 338 L242 316 L330 254 L494 290 L744 198 L828 146 L916 208 L1004 186 L1078 166 L1118 166 L1192 146 L1310 18";
 
   return (
     <div className="banner-container">
@@ -14,37 +14,39 @@ const Banner = () => {
         className="banner-bg"
       />
 
-      {/* SVG com compensação vertical */}
       <svg
+        viewBox="0 0 1367 519"
         className="neon-svg"
-        viewBox="0 40 1332 376" 
-        preserveAspectRatio="xMidYMid slice"
-        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
       >
-        <motion.path
-          d={linhaCaminho}
-          fill="none"
-          stroke="#0B31ED"
-          strokeWidth="8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 3, ease: "easeInOut" }}
-          style={{ filter: "blur(8px)", opacity: 0.85 }}
-        />
+        {/* translate(32, 85): 
+            32 -> moveu mais para a DIREITA
+            85 -> subiu 5px em relação ao anterior (era 90)
+        */}
+        <g transform="translate(32, 85) scale(1.04, 1)">
+          {/* EFEITO NEON (GLOW) */}
+          <motion.path
+            d={linhaCaminho}
+            stroke="#0B31ED"
+            strokeWidth="16"
+            fill="none"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 3, ease: "easeInOut" }}
+            style={{ filter: "blur(12px)", opacity: 0.7 }}
+          />
 
-        <motion.path
-          d={linhaCaminho}
-          fill="none"
-          stroke="#ffffff"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 3, ease: "easeInOut" }}
-        />
+          {/* LINHA BRANCA CENTRAL */}
+          <motion.path
+            d={linhaCaminho}
+            stroke="white"
+            strokeWidth="2.5"
+            fill="none"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 3, ease: "easeInOut" }}
+          />
+        </g>
       </svg>
     </div>
   );

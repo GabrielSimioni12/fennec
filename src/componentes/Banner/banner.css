@@ -1,24 +1,20 @@
 .banner-container {
   position: relative;
   width: 100%;
-  height: 380px;
+  aspect-ratio: 1367 / 519; /* Trava a proporção da imagem original */
   overflow: hidden;
   background-color: #000;
 }
 
-/* Imagem cobre tudo, mas NÃO corta o topo */
 .banner-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-
-  /* 👇 AQUI ESTÁ O SEGREDO */
-  object-position: center top;
+  object-fit: fill; /* Garante que a imagem estique exatamente como o SVG */
+  z-index: 1;
 }
 
-/* SVG acompanha exatamente o mesmo enquadramento */
 .neon-svg {
   position: absolute;
   inset: 0;
