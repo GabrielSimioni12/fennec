@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Banner from './componentes/Banner/banner';
 import Formulario from './componentes/Formulario/Index';
-import Time from './componentes/Time/Time';
+import Time from './componentes/Time/Index';
 
 function App() {
 
