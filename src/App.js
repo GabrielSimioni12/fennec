@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Banner from './componentes/Banner/Banner';
+import Banner from './componentes/Banner/banner';
 import Formulario from './componentes/Formulario/Index';
 import Time from './componentes/Time/Time';
 
