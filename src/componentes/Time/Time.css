@@ -1,15 +1,15 @@
 .time {
     position: relative; 
     text-align: center;
-    padding: 32px;
+    padding: 60px 32px;
 }
-
 
 .time h3 {
     font-size: 32px;
     border-bottom: 4px solid;
     display: inline-block;
     padding-bottom: 8px;
+    font-weight: bold;
 }
 
 .time .colaboradores {
@@ -17,10 +17,12 @@
     justify-content: space-around;
     margin-top: 32px;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .input-cor {
     position: absolute;
     top: 20px;
     right: 50px;
+    cursor: pointer;
 }
