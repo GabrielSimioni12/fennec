@@ -6,13 +6,13 @@ import Time from './componentes/Time/Index';
 function App() {
 
   const [times, setTimes] = useState([
-    { nome: 'TI', corPrimaria: '#00FF7F', fotoFundo: '/imagens/fundo.png' },
-    { nome: 'Marketing', corPrimaria: '#E06B69', fotoFundo: '/imagens/fundo.png' },
-    { nome: 'Vendas', corPrimaria: '#00D4FF', fotoFundo: '/imagens/fundo.png' },
-    { nome: 'RH', corPrimaria: '#FFBA05', fotoFundo: '/images/fundo_card' },
-    { nome: 'Financeiro', corPrimaria: '#3dd62fff', fotoFundo: '/imagens/fundo.png' },
-    { nome: 'Operações', corPrimaria: '#3C467B', fotoFundo: '/imagens/fundo.png' },
-    { nome: 'Jurídico', corPrimaria: '#E62727', fotoFundo: '/imagens/fundo.png' },
+    { nome: 'TI', corPrimaria: '#ffffffff', fotoFundo: '/images/fundo_card.png' },
+    { nome: 'Marketing', corPrimaria: '#d30785ff', fotoFundo: '/images/fundo_card.png' },
+    { nome: 'Vendas', corPrimaria: '#00D4FF', fotoFundo: '/images/fundo_card.png' },
+    { nome: 'RH', corPrimaria: '#FFBA05', fotoFundo: '/images/fundo_card.png' },
+    { nome: 'Financeiro', corPrimaria: '#3dd62fff', fotoFundo: '/images/fundo_card.png' },
+    { nome: 'Operações', corPrimaria: '#3C467B', fotoFundo: '/images/fundo_card.png' },
+    { nome: 'Jurídico', corPrimaria: '#E62727', fotoFundo: '/images/fundo_card.png' },
   ]);
 
   const [colaboradores, setColaboradores] = useState([]);
