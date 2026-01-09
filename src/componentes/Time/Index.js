@@ -1,11 +1,17 @@
 import Colaborador from '../Colaborador/colaborador'
 import './time.css'
 
-// Ajustei a desestruturação para receber os campos direto, sem o objeto "time"
-const Time = ({ nome, corPrimaria, corSecundaria, colaboradores }) => {
+const Time = ({ nome, corPrimaria, corSecundaria, colaboradores, mudarCorDoTime }) => {
     return (
         colaboradores.length > 0 && (
             <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: corSecundaria }}>
+                <input 
+                    onChange={evento => mudarCorDoTime(evento.target.value, nome)} 
+                    value={corSecundaria} 
+                    type='color' 
+                    className='input-cor' 
+                />
+                
                 <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
                 <div className='colaboradores'>
                     {colaboradores.map((colaborador, indice) => (

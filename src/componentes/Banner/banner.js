@@ -4,7 +4,7 @@ import "./banner.css";
 
 const Banner = () => {
   const linhaCaminho =
-    "M22 350 L128 316 L190 338 L242 316 L330 254 L494 290 L744 198 L828 146 L916 208 L1004 186 L1078 166 L1118 166 L1192 146 L1285 5";
+    "M0 380 L139 320 L207 346 L238 330 L330 258 L494 295 L744 200 L828 150 L916 212 L1004 190 L1078 170 L1118 170 L1192 142 L1285 30";
 
   const particles = Array.from({ length: 30 });
 
@@ -17,7 +17,7 @@ const Banner = () => {
         className="banner-bg"
       />
 
-      {/* Partículas */}
+      {/* Partículas – NÃO MEXE */}
       <div className="particles-layer">
         {particles.map((_, i) => (
           <span
@@ -33,13 +33,14 @@ const Banner = () => {
         ))}
       </div>
 
-      {/* SVG – NÃO MEXE */}
+      {/* SVG – LINHA ALINHADA */}
       <svg
         viewBox="0 0 1367 519"
         className="neon-svg"
         preserveAspectRatio="none"
       >
-        <g>
+        {/* 🔥 TRANSFORM RESTAURADO (AQUI ESTÁ A CHAVE) */}
+        <g transform="translate(32, 85) scale(1.04, 1)">
           {/* Glow */}
           <motion.path
             d={linhaCaminho}
