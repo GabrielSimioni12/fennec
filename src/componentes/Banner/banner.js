@@ -10,19 +10,19 @@ const Banner = () => {
 
   return (
     <div className="banner-container">
-      {/* Fundo */}
+      {/* Imagem de Fundo - Z-INDEX 1 */}
       <img
         src="/images/Image.png"
         alt="Banner Fennec"
         className="banner-bg"
       />
 
-      {/* Partículas – NÃO MEXE */}
-      <div className="particles-layer">
+      {/* Camada de Partículas - Z-INDEX 2 */}
+      <div className="banner-particles-layer">
         {particles.map((_, i) => (
           <span
             key={i}
-            className="particle"
+            className="banner-particle"
             style={{
               left: `${Math.random() * 100}%`,
               animationDuration: `${8 + Math.random() * 8}s`,
@@ -33,15 +33,13 @@ const Banner = () => {
         ))}
       </div>
 
-      {/* SVG – LINHA ALINHADA */}
+      {/* SVG Neon - Z-INDEX 4 */}
       <svg
         viewBox="0 0 1367 519"
         className="neon-svg"
         preserveAspectRatio="none"
       >
-        {/* 🔥 TRANSFORM RESTAURADO (AQUI ESTÁ A CHAVE) */}
         <g transform="translate(32, 85) scale(1.04, 1)">
-          {/* Glow */}
           <motion.path
             d={linhaCaminho}
             stroke="#0B31ED"
@@ -49,16 +47,9 @@ const Banner = () => {
             fill="none"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{
-              duration: 3,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatDelay: 0.6,
-            }}
+            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.6 }}
             style={{ filter: "blur(12px)", opacity: 0.7 }}
           />
-
-          {/* Linha principal */}
           <motion.path
             d={linhaCaminho}
             stroke="#ffffff"
@@ -66,12 +57,7 @@ const Banner = () => {
             fill="none"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{
-              duration: 3,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatDelay: 0.6,
-            }}
+            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.6 }}
           />
         </g>
       </svg>

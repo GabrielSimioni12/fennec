@@ -3,47 +3,37 @@
   width: 100%;
   height: 520px;
   overflow: hidden;
+  background-color: #02012e; /* Cor de segurança */
 }
 
-/* Fundo */
 .banner-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  z-index: 1; /* Fundo no nível mais baixo */
 }
 
-/* SVG */
-.neon-svg {
+.banner-particles-layer {
   position: absolute;
   inset: 0;
-  z-index: 4;
+  z-index: 2; /* Partículas acima da imagem */
   pointer-events: none;
 }
 
-/* Partículas */
-.particles-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.particle {
+.banner-particle {
   position: absolute;
   bottom: -10px;
   width: 4px;
   height: 4px;
-  background: rgba(200, 230, 255, 0.6);
+  background: rgba(200, 230, 255, 0.8);
   border-radius: 50%;
-  animation-name: floatUp;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glow no banner */
+  animation: floatUpBanner linear infinite;
 }
 
-@keyframes floatUp {
+@keyframes floatUpBanner {
   from {
     transform: translateY(0);
     opacity: 0;
@@ -55,4 +45,11 @@
     transform: translateY(-600px);
     opacity: 0;
   }
+}
+
+.neon-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 4; /* SVG acima de tudo */
+  pointer-events: none;
 }
