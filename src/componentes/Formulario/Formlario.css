@@ -1,13 +1,101 @@
-.formulario {
-   display: flex;
-   justify-content: center;
-   margin: 80px 0;
+/* ============================= */
+/* FUNDO DA SEÇÃO */
+/* ============================= */
+.form-section {
+  min-height: 100vh;
+  padding: 80px 6%;
+  background: linear-gradient(
+    180deg,
+    #06182a 0%,
+    #0b2f4f 60%,
+    #06182a 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.formulario form {
-    max-width: 80%;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    padding: 36px 64px;
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1);
+/* ============================= */
+/* CARD DO FORMULÁRIO */
+/* ============================= */
+.formulario {
+  width: 100%;
+  max-width: 720px;
+  background: linear-gradient(
+    160deg,
+    rgba(20, 80, 140, 0.92),
+    rgba(10, 40, 80, 0.92)
+  );
+  border-radius: 22px;
+  padding: 52px 60px;
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* ============================= */
+/* TÍTULO */
+/* ============================= */
+.formulario h2 {
+  font-size: 1.9rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* ============================= */
+/* LABELS */
+/* ============================= */
+.formulario label {
+  color: #dce8f3;
+  font-weight: 500;
+}
+
+/* ============================= */
+/* INPUTS E SELECT */
+/* ============================= */
+.formulario input,
+.formulario select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  transition: all 0.25s ease;
+}
+
+.formulario input::placeholder {
+  color: #7a8da6;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(80, 160, 255, 0.45);
+}
+
+/* ============================= */
+/* BOTÃO */
+/* ============================= */
+.formulario button {
+  margin-top: 24px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4aa3ff, #1e90ff);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formulario button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(30, 144, 255, 0.45);
 }
