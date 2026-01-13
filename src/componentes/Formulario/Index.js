@@ -9,21 +9,39 @@ const Formulario = (props) => {
   const [cargo, setCargo] = useState('');
   const [imagem, setImagem] = useState('');
   const [time, setTime] = useState('');
+  const [novoTime, setNovoTime] = useState('');
+  const [criandoNovoTime, setCriandoNovoTime] = useState(false);
 
   const aoSalvar = (evento) => {
     evento.preventDefault();
+
+    let timeFinal = time;
+
+    // Se estiver criando um novo time, usamos o valor do input "novoTime"
+    if (criandoNovoTime && novoTime.trim() !== '') {
+      timeFinal = novoTime.trim();
+
+      props.aoNovoTimeCriado({
+        nome: timeFinal,
+        corPrimaria: '#ffffffff',
+        fotoFundo: '/images/fundo_card.png'
+      });
+    }
+
     props.aoColaboradorCadastrado({
       nome,
       cargo,
       imagem,
-      time
+      time: timeFinal
     });
 
-    // opcional: limpar formulário
+    // Limpa o formulário após salvar
     setNome('');
     setCargo('');
     setImagem('');
     setTime('');
+    setNovoTime('');
+    setCriandoNovoTime(false);
   };
 
   return (
@@ -56,14 +74,36 @@ const Formulario = (props) => {
           />
 
           <ListaSuspensa
-            obrigatorio
+            // CORREÇÃO: A lista só é obrigatória se NÃO estiver criando um novo time
+            obrigatorio={!criandoNovoTime} 
             label="Time"
-            itens={props.times}
+            itens={[...props.times, '+ Criar novo time']}
             valor={time}
-            aoAlterado={setTime}
+            className={criandoNovoTime ? 'modo-novo-time' : ''}
+            aoAlterado={(valor) => {
+              if (valor === '+ Criar novo time') {
+                setCriandoNovoTime(true);
+                setTime(''); // Limpa a seleção para não travar o required
+              } else {
+                setCriandoNovoTime(false);
+                setTime(valor);
+              }
+            }}
           />
 
-          <Botao>Criar Card</Botao>
+          {criandoNovoTime && (
+            <CampoTexto
+              obrigatorio
+              label="Novo Time"
+              placeholder="Digite o nome do novo time"
+              valor={novoTime}
+              aoAlterado={setNovoTime}
+            />
+          )}
+
+          <Botao classeExtra={criandoNovoTime ? 'botao-novo-time' : ''}>
+            Criar Card
+          </Botao>
         </form>
       </div>
     </section>

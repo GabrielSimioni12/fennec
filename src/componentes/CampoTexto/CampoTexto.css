@@ -18,3 +18,31 @@
     padding: 24px;
     box-sizing: border-box;
 }
+
+.campo-texto {
+    margin: 24px 0;
+}
+
+.campo-texto label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF; /* Escrita em branco */
+}
+
+.campo-texto input {
+    background-color: #F2F2F2;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 15px; /* Mais preenchimento para ficar robusto */
+    box-sizing: border-box;
+    border-radius: 20px; /* Bordas bem arredondadas como na imagem */
+    outline: none;
+}
+
+.campo-texto input:focus {
+    border: 2px solid #6278f7; /* Destaque ao clicar */
+}

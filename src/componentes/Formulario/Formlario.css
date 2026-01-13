@@ -4,12 +4,7 @@
 .form-section {
   min-height: 100vh;
   padding: 80px 6%;
-  background: linear-gradient(
-    180deg,
-    #06182a 0%,
-    #0b2f4f 60%,
-    #06182a 100%
-  );
+  background: linear-gradient(180deg, #06182a, #0b2f4f, #06182a);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,10 +23,7 @@
   );
   border-radius: 22px;
   padding: 52px 60px;
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.45),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
 }
 
 /* ============================= */
@@ -42,19 +34,10 @@
   margin-bottom: 40px;
   text-align: center;
   color: #ffffff;
-  letter-spacing: 0.5px;
 }
 
 /* ============================= */
-/* LABELS */
-/* ============================= */
-.formulario label {
-  color: #dce8f3;
-  font-weight: 500;
-}
-
-/* ============================= */
-/* INPUTS E SELECT */
+/* INPUTS / SELECT */
 /* ============================= */
 .formulario input,
 .formulario select {
@@ -67,35 +50,59 @@
   transition: all 0.25s ease;
 }
 
-.formulario input::placeholder {
-  color: #7a8da6;
-}
-
 .formulario input:focus,
 .formulario select:focus {
   outline: none;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(80, 160, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.45);
+}
+
+/* ============================= */
+/* OPTION + CRIAR NOVO TIME */
+/* ============================= */
+.formulario select option[value="+ Criar novo time"] {
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+/* ============================= */
+/* SELECT ATIVO EM NOVO TIME */
+/* ============================= */
+.formulario select.modo-novo-time {
+  border: 2px solid #00d4ff;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.25);
 }
 
 /* ============================= */
 /* BOTÃO */
 /* ============================= */
-.formulario button {
+.botao {
   margin-top: 24px;
   width: 100%;
   padding: 14px;
   border-radius: 14px;
   font-size: 1.1rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #4aa3ff, #1e90ff);
+  background: linear-gradient(135deg, #2a8cff, #00d4ff);
   color: #ffffff;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.formulario button:hover {
+.botao:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(30, 144, 255, 0.45);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.35);
 }
+
+/* ============================= */
+/* BOTÃO EM NOVO TIME */
+/* ============================= */
+.botao-novo-time {
+  background: linear-gradient(135deg, #00c853, #64dd17);
+}
+
+.botao-novo-time:hover {
+  box-shadow: 0 8px 22px rgba(100, 221, 23, 0.45);
+}
+
+
