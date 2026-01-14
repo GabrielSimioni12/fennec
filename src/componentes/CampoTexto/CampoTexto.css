@@ -1,26 +1,5 @@
 .campo-texto {
     margin: 24px 0;
-    
-}
-
-.campo-texto label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 24px;
-}
-
-.campo-texto input {
-    background-color: #f9f9f9;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    border: none;
-    font-size: 24px;
-    padding: 24px;
-    box-sizing: border-box;
-}
-
-.campo-texto {
-    margin: 24px 0;
 }
 
 .campo-texto label {
@@ -28,7 +7,7 @@
     margin-bottom: 8px;
     font-size: 18px;
     font-weight: 600;
-    color: #FFFFFF; /* Escrita em branco */
+    color: #FFFFFF; /* Escrita em branco para destacar no fundo escuro */
 }
 
 .campo-texto input {
@@ -37,12 +16,49 @@
     width: 100%;
     border: none;
     font-size: 16px;
-    padding: 15px; /* Mais preenchimento para ficar robusto */
+    padding: 15px;
     box-sizing: border-box;
-    border-radius: 20px; /* Bordas bem arredondadas como na imagem */
+    border-radius: 20px; /* Bordas arredondadas conforme o design */
     outline: none;
 }
 
 .campo-texto input:focus {
-    border: 2px solid #6278f7; /* Destaque ao clicar */
+    border: 2px solid #6278f7; /* Destaque azul ao focar */
+}
+
+/* Estilo específico para o campo de Upload */
+.campo-texto input[type="file"] {
+    background-color: #FFF;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Customização do botão "Escolher arquivo" */
+.campo-arquivo input::file-selector-button {
+    background-color: #154580; /* Azul Fennec */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.campo-arquivo input::file-selector-button:hover {
+    background-color: #0B31ED;
+}
+
+.preview-imagem {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.preview-imagem img {
+  max-width: 140px;
+  max-height: 140px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }

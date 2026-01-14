@@ -17,13 +17,12 @@ const Formulario = (props) => {
 
     let timeFinal = time;
 
-    // Se estiver criando um novo time, usamos o valor do input "novoTime"
     if (criandoNovoTime && novoTime.trim() !== '') {
       timeFinal = novoTime.trim();
 
       props.aoNovoTimeCriado({
         nome: timeFinal,
-        corPrimaria: '#ffffffff',
+        corPrimaria: '#ffffff',
         fotoFundo: '/images/fundo_card.png'
       });
     }
@@ -35,7 +34,7 @@ const Formulario = (props) => {
       time: timeFinal
     });
 
-    // Limpa o formulário após salvar
+    // reset
     setNome('');
     setCargo('');
     setImagem('');
@@ -66,24 +65,30 @@ const Formulario = (props) => {
             aoAlterado={setCargo}
           />
 
+          {/* 🔗 IMAGEM VIA LINK */}
           <CampoTexto
-            label="Imagem"
-            placeholder="Digite o endereço da imagem"
+            label="Imagem (URL)"
+            placeholder="Cole o link da imagem"
             valor={imagem}
             aoAlterado={setImagem}
           />
 
+          {/* 📁 IMAGEM VIA UPLOAD / GALERIA / CÂMERA */}
+          <CampoTexto
+            label="Imagem (Arquivo ou Galeria)"
+            type="file"
+            aoAlterado={setImagem}
+          />
+
           <ListaSuspensa
-            // CORREÇÃO: A lista só é obrigatória se NÃO estiver criando um novo time
-            obrigatorio={!criandoNovoTime} 
+            obrigatorio={!criandoNovoTime}
             label="Time"
             itens={[...props.times, '+ Criar novo time']}
             valor={time}
-            className={criandoNovoTime ? 'modo-novo-time' : ''}
             aoAlterado={(valor) => {
               if (valor === '+ Criar novo time') {
                 setCriandoNovoTime(true);
-                setTime(''); // Limpa a seleção para não travar o required
+                setTime('');
               } else {
                 setCriandoNovoTime(false);
                 setTime(valor);
