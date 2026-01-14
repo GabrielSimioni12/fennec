@@ -40,3 +40,84 @@
     cursor: pointer;
     z-index: 10;
 }
+
+.colaborador {
+    position: relative;
+}
+
+.deletar {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    cursor: pointer;
+    color: #E62727;
+    z-index: 10;
+    transition: transform 0.2s;
+}
+
+.deletar:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo da Caixa de Confirmação */
+.overlay-deletar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    color: white;
+}
+
+.overlay-deletar p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.botoes-confirmacao {
+    display: flex;
+    gap: 15px;
+}
+
+.botoes-confirmacao button {
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: filter 0.2s;
+}
+
+.btn-sim { background-color: #3dd62f; }
+.btn-nao { background-color: #E62727; }
+
+.botoes-confirmacao button:hover {
+    filter: brightness(1.2);
+}
+
+
+
+
+
+
+
+
+.colaborador {
+    width: 280px; /* Largura fixa segura para a maioria dos celulares */
+    max-width: 100%;
+}
+
+/* Ajuste da logo da empresa na transição */
+.logo-reduzida {
+    max-width: 120px;
+    height: auto;
+}

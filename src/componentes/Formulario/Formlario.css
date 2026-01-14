@@ -106,3 +106,18 @@
 }
 
 
+
+
+
+.formulario {
+    max-width: 95%; /* Ocupa quase toda a tela no mobile */
+    margin: 20px auto;
+    padding: 20px; /* Reduz o padding em telas menores */
+}
+
+@media (min-width: 1024px) {
+    .formulario {
+        max-width: 80%; /* No desktop mantém o tamanho elegante */
+        padding: 36px 64px;
+    }
+}

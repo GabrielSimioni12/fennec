@@ -26,3 +26,29 @@
     right: 50px;
     cursor: pointer;
 }
+
+
+
+
+
+.colaboradores {
+    display: flex;
+    flex-wrap: wrap; /* Essencial para os cards descerem */
+    justify-content: center; /* Centraliza os cards em qualquer tela */
+    gap: 24px;
+    padding: 30px 10px;
+}
+
+.time {
+    padding: 32px 15px; /* Ajusta o respiro lateral */
+}
+
+.time h3 {
+    font-size: 24px; /* Título um pouco menor no mobile */
+}
+
+@media (min-width: 768px) {
+    .time h3 {
+        font-size: 32px;
+    }
+}

@@ -142,3 +142,39 @@ code {
 .stat-mini i {
     color: #00D4FF;
 }
+
+
+
+
+
+/* Container Geral */
+.App {
+    overflow-x: hidden; /* Evita scroll lateral indesejado */
+}
+
+/* Seção de Estatísticas Responsiva */
+.transicao-compacta {
+    padding: 15px 10px;
+}
+
+.transicao-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens pulem de linha em telas pequenas */
+    justify-content: center;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .transicao-texto {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .transicao-stats {
+        gap: 15px;
+    }
+}
+
+
+
+
