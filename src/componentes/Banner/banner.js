@@ -3,21 +3,24 @@ import { motion } from "framer-motion";
 import "./banner.css";
 
 const Banner = () => {
+  // O caminho do gráfico animado que acompanha os vetores da imagem
   const linhaCaminho =
     "M0 380 L139 320 L207 346 L238 330 L330 258 L494 295 L744 200 L828 150 L916 212 L1004 190 L1078 170 L1118 170 L1192 142 L1285 30";
 
   const particles = Array.from({ length: 30 });
 
   return (
+    /* A classe banner-container agora controla a visibilidade via CSS */
     <div className="banner-container">
-      {/* Imagem de Fundo - Z-INDEX 1 */}
+      
+      {/* Imagem de Fundo - Renderizada via tag img para melhor controle de object-fit */}
       <img
         src="/images/Image.png"
         alt="Banner Fennec"
         className="banner-bg"
       />
 
-      {/* Camada de Partículas - Z-INDEX 2 */}
+      {/* Camada de Partículas Flutuantes */}
       <div className="banner-particles-layer">
         {particles.map((_, i) => (
           <span
@@ -33,13 +36,14 @@ const Banner = () => {
         ))}
       </div>
 
-      {/* SVG Neon - Z-INDEX 4 */}
+      {/* SVG Neon Animado - Alinhado com os dados do banner desktop */}
       <svg
         viewBox="0 0 1367 519"
         className="neon-svg"
         preserveAspectRatio="none"
       >
         <g transform="translate(32, 85) scale(1.04, 1)">
+          {/* Brilho Externo (Glow) */}
           <motion.path
             d={linhaCaminho}
             stroke="#0B31ED"
@@ -50,6 +54,7 @@ const Banner = () => {
             transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.6 }}
             style={{ filter: "blur(12px)", opacity: 0.7 }}
           />
+          {/* Linha Central Branca (Core) */}
           <motion.path
             d={linhaCaminho}
             stroke="#ffffff"

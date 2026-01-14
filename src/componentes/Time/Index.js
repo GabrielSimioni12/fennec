@@ -1,6 +1,6 @@
 import Colaborador from '../Colaborador/colaborador'
 import Particulas from '../ParticulasEfect/particula'
-import './time.css'
+import './Time.css'
 
 const Time = ({ nome, corPrimaria, colaboradores, mudarCorDoTime, fotoFundo, aoDeletar }) => {
     const estiloFundo = {
