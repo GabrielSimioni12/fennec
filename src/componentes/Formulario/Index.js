@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react'; // Adicionamos o useRef aqui
 import CampoTexto from '../CampoTexto/Index';
 import ListaSuspensa from '../ListaSuspensa/Index';
 import Botao from '../botao/Botao';
@@ -12,6 +12,9 @@ const Formulario = (props) => {
   const [novoTime, setNovoTime] = useState('');
   const [criandoNovoTime, setCriandoNovoTime] = useState(false);
 
+  // Criamos uma referência para o input de arquivo
+  const arquivoInputRef = useRef(null);
+
   const aoSalvar = (evento) => {
     evento.preventDefault();
 
@@ -19,7 +22,6 @@ const Formulario = (props) => {
 
     if (criandoNovoTime && novoTime.trim() !== '') {
       timeFinal = novoTime.trim();
-
       props.aoNovoTimeCriado({
         nome: timeFinal,
         corPrimaria: '#ffffff',
@@ -34,13 +36,19 @@ const Formulario = (props) => {
       time: timeFinal
     });
 
-    // reset
+    // --- RESET DOS ESTADOS ---
     setNome('');
     setCargo('');
     setImagem('');
     setTime('');
     setNovoTime('');
     setCriandoNovoTime(false);
+
+    // --- LIMPEZA MANUAL DO INPUT DE ARQUIVO ---
+    // Isso remove o nome do arquivo que fica escrito no botão
+    if (arquivoInputRef.current) {
+        arquivoInputRef.current.value = ""; 
+    }
   };
 
   return (
@@ -65,7 +73,6 @@ const Formulario = (props) => {
             aoAlterado={setCargo}
           />
 
-          {/* 🔗 IMAGEM VIA LINK */}
           <CampoTexto
             label="Imagem (URL)"
             placeholder="Cole o link da imagem"
@@ -73,11 +80,12 @@ const Formulario = (props) => {
             aoAlterado={setImagem}
           />
 
-          {/* 📁 IMAGEM VIA UPLOAD / GALERIA / CÂMERA */}
+          {/* Passamos a referência (ref) para o CampoTexto conseguir limpar o input */}
           <CampoTexto
             label="Imagem (Arquivo ou Galeria)"
             type="file"
             aoAlterado={setImagem}
+            ref={arquivoInputRef} 
           />
 
           <ListaSuspensa
