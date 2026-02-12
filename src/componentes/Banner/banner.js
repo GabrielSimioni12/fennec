@@ -5,7 +5,7 @@ import "./banner.css";
 const Banner = () => {
   // O caminho do gráfico animado que acompanha os vetores da imagem
   const linhaCaminho =
-    "M0 380 L139 320 L207 346 L238 330 L330 258 L494 295 L744 200 L828 150 L916 212 L1004 190 L1078 170 L1118 170 L1192 142 L1285 30";
+    "M0 380 L139 320 L207 346 L238 330 L330 258 L494 295 L744 200 L822 144 L903 207 L1009 180 L1078 162 L1119 170 L1170 142 L1285 10";
 
   const particles = Array.from({ length: 30 });
 

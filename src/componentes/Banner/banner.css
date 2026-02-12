@@ -1,9 +1,12 @@
 .banner-container {
   position: relative;
   width: 100%;
-  height: 520px;
+  /* Define a proporção baseada na sua imagem original (Largura / Altura) */
+  /* Se sua imagem tem 1920x730, a proporção é 1920/730. Ajuste se necessário */
+  aspect-ratio: 16 / 6; 
+  min-height: 300px; /* Garante que não fique minúsculo antes de sumir */
   overflow: hidden;
-  background-color: #02012e; /* Cor de segurança */
+  background-color: #02012e;
 }
 
 .banner-bg {
@@ -11,14 +14,15 @@
   inset: 0;
   width: 100%;
   height: 100%;
+  /* Agora usamos 'cover' com segurança pois o container segue a proporção da imagem */
   object-fit: cover;
-  z-index: 1; /* Fundo no nível mais baixo */
+  z-index: 1;
 }
 
 .banner-particles-layer {
   position: absolute;
   inset: 0;
-  z-index: 2; /* Partículas acima da imagem */
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -29,7 +33,7 @@
   height: 4px;
   background: rgba(200, 230, 255, 0.8);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glow no banner */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   animation: floatUpBanner linear infinite;
 }
 
@@ -42,7 +46,7 @@
     opacity: 1;
   }
   to {
-    transform: translateY(-600px);
+    transform: translateY(-100vh); /* Usa vh para ser relativo à tela */
     opacity: 0;
   }
 }
@@ -50,14 +54,17 @@
 .neon-svg {
   position: absolute;
   inset: 0;
-  z-index: 4; /* SVG acima de tudo */
+  width: 100%;
+  height: 100%;
+  z-index: 4;
   pointer-events: none;
+  /* Importante: garante que o SVG estique junto com o container */
+  display: block;
 }
 
-
-/* Esconde todo o conteúdo do banner em telas menores que 768px */
+/* Esconde o banner em telas menores que 768px conforme solicitado */
 @media (max-width: 768px) {
-    .banner-container {
-        display: none !important;
-    }
+  .banner-container {
+    display: none !important;
+  }
 }
